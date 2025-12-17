@@ -93,9 +93,7 @@ class RedBlackTreeMap(TreeMap):
         """Resolve deficit preto em z, onde y é a raiz da subárvore mais pesada de z."""
         if not self._is_red(y):
             x = self._get_red_child(y)
-            if (
-                x is not None
-            ):
+            if x is not None:
                 old_color = self._is_red(z)
                 middle = self._restructure(x)
                 self._set_color(middle, old_color)
@@ -106,9 +104,7 @@ class RedBlackTreeMap(TreeMap):
                 if self._is_red(z):
                     self._set_black(z)
                 elif not self.is_root(z):
-                    self._fix_deficit(
-                        self.parent(z), self.sibling(z)
-                    )
+                    self._fix_deficit(self.parent(z), self.sibling(z))
         else:
             self._rotate(y)
             self._set_black(y)

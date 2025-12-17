@@ -2,11 +2,10 @@ from src.tree_map import TreeMap
 
 
 class AVLTreeMap(TreeMap):
-    """Sorted map implementation using an AVL tree."""
+    """Implementação de mapa ordenado usando uma árvore AVL."""
 
-    # -------------------- nested _Node class --------------------
     class _Node(TreeMap._Node):
-        """Node class for AVL maintains height value for balancing."""
+        """Classe Node para AVL mantém valor de altura para balanceamento."""
 
         __slots__ = "_height"
 
@@ -15,23 +14,23 @@ class AVLTreeMap(TreeMap):
             self._height = 0
 
     def _recompute_height(self, p):
-        """Recompute the height of position p based on its children's heights."""
+        """Recalcula a altura da posição p com base nas alturas de seus filhos."""
         node = self._validate(p)
         node._height = 1 + max(self._height(self.left(p)), self._height(self.right(p)))
 
     def _isbalanced(self, p):
-        """Return True if position p has balance factor between -1 and 1."""
+        """Retorna True se a posição p tem fator de balanceamento entre -1 e 1."""
         return abs(self._height(self.left(p)) - self._height(self.right(p))) <= 1
 
     def _height(self, p):
-        """Return the height of the subtree rooted at Position p."""
+        """Retorna a altura da subárvore enraizada na Posição p."""
         if p is None:
             return 0
         else:
             return p._node._height
 
     def _tall_child(self, p, favorleft=False):
-        """Return the taller child of p (favor left child if heights are equal)."""
+        """Retorna o filho mais alto de p (favorece o filho esquerdo se as alturas forem iguais)."""
         if self._height(self.left(p)) + (1 if favorleft else 0) > self._height(
             self.right(p)
         ):
@@ -40,13 +39,13 @@ class AVLTreeMap(TreeMap):
             return self.right(p)
 
     def _tall_grandchild(self, p):
-        """Return the taller grandchild of p, favoring alignment for tie-breaking."""
+        """Retorna o neto mais alto de p, favorecendo alinhamento para desempate."""
         child = self._tall_child(p)
         alignment = child == self.left(p)
         return self._tall_child(child, alignment)
 
     def _rebalance(self, p):
-        """Rebalance the tree starting at position p and moving upward."""
+        """Rebalanceia a árvore começando na posição p e subindo."""
         while p is not None:
             old_height = self._height(p)
             if not self._isbalanced(p):
@@ -60,9 +59,9 @@ class AVLTreeMap(TreeMap):
                 p = self.parent(p)
 
     def _rebalance_insert(self, p):
-        """Rebalance the tree after an insertion at position p."""
+        """Rebalanceia a árvore após uma inserção na posição p."""
         self._rebalance(p)
 
     def _rebalance_delete(self, p):
-        """Rebalance the tree after a deletion at position p."""
+        """Rebalanceia a árvore após uma deleção na posição p."""
         self._rebalance(p)

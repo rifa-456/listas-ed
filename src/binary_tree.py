@@ -3,6 +3,7 @@ Refactoring:
 1. Introduced _get_node_label(p) to allow subclasses to customize node display.
 2. Updated _build_tree_string to use this new method.
 """
+
 from src.tree import Tree
 from rich.console import Console
 
@@ -90,16 +91,16 @@ class BinaryTree(Tree):
     def show(self, title="Árvore Binária"):
         """Imprime a árvore no console com formatação ASCII visual."""
         console = Console()
-        console.print(f"\n[bold underline]{title}[/bold underline]\n")
+        console.print(f"\n[bold underline]{title}[/bold underline]\n", soft_wrap=True)
 
         if self.is_empty():
-            console.print("[dim italic]Árvore Vazia[/dim italic]")
+            console.print("[dim italic]Árvore Vazia[/dim italic]", soft_wrap=True)
             return
 
         lines, _, _, _ = self._build_tree_string(self.root())
         for line in lines:
-            console.print(f"[bold white]{line}[/bold white]")
-        console.print("")
+            console.print(f"[bold white]{line}[/bold white]", soft_wrap=True)
+        console.print("", soft_wrap=True)
 
     def _get_node_label(self, p):
         """

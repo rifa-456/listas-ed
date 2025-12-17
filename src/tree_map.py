@@ -114,7 +114,6 @@ class TreeMap(LinkedBinaryTree, MapBase):
                 yield (p.key(), p.value())
                 p = self.after(p)
 
-    # -------------------- Map operations --------------------
     def __getitem__(self, k):
         """Retorna valor associado com chave k (levanta KeyError se não encontrada)."""
         if self.is_empty():
@@ -184,9 +183,8 @@ class TreeMap(LinkedBinaryTree, MapBase):
         """Hook para subclasses balanceadas chamado após acesso."""
         pass
 
-
     def _restructure(self, x):
-        """Perform trinode restructure of Position x with parent/grandparent."""
+        """Realiza uma reestruturação de três nós da Posição x com seu pai e avô."""
         y = self.parent(x)
         z = self.parent(y)
         if (x == self.right(y)) == (y == self.right(z)):
@@ -198,7 +196,7 @@ class TreeMap(LinkedBinaryTree, MapBase):
             return x
 
     def _rotate(self, p):
-        """Rotate Position p above its parent."""
+        """Rotaciona a Posição p para cima de seu pai."""
         x = p._node
         y = x._parent
         z = y._parent
@@ -215,7 +213,7 @@ class TreeMap(LinkedBinaryTree, MapBase):
             self._relink(x, y, True)
 
     def _relink(self, parent, child, make_left_child):
-        """Relink parent node with child node (we allow child to be None)."""
+        """Reconecta um nó pai a um nó filho (permite que o filho seja None)."""
         if make_left_child:
             parent._left = child
         else:
