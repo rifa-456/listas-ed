@@ -1,10 +1,11 @@
 from src.linked_stack import LinkedStack  # importando da minha própria implementação
 from src.linked_queue import LinkedQueue  # importando da minha própria implementação
-from src.circular_queue import CircularQueue  # importando da minha própria implementação
+from src.circular_queue import (
+    CircularQueue,
+)  # importando da minha própria implementação
 from src.linked_deque import LinkedDeque  # importando da minha própria implementação
 
 if __name__ == "__main__":
-
     print("\nLinkedStack\n")
     l_stack = LinkedStack()
     l_stack.push("Prato de Baixo")

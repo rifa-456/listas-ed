@@ -1,5 +1,6 @@
 from src.linked_stack import LinkedStack
 
+
 def reverse_recursive(node):
     if node is None or node._next is None:
         return node
@@ -8,6 +9,7 @@ def reverse_recursive(node):
     node._next = None
     return new_head
 
+
 def print_list(head):
     elements = []
     current = head
@@ -15,6 +17,7 @@ def print_list(head):
         elements.append(str(current._element))
         current = current._next
     print(" -> ".join(elements) + " -> None")
+
 
 if __name__ == "__main__":
     stack = LinkedStack()

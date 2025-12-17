@@ -1,9 +1,8 @@
-from src.array_stack import ArrayStack   # importando da minha própria implementação
-from src.array_queue import ArrayQueue   # importando da minha própria implementação
-from src.array_deque import ArrayDeque   # importando da minha própria implementação
+from src.array_stack import ArrayStack  # importando da minha própria implementação
+from src.array_queue import ArrayQueue  # importando da minha própria implementação
+from src.array_deque import ArrayDeque  # importando da minha própria implementação
 
 if __name__ == "__main__":
-
     print("\n(Stack)\n")
     stack = ArrayStack()
     stack.push("Prato de Baixo")

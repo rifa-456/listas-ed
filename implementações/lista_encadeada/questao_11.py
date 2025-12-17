@@ -1,6 +1,7 @@
 from src.array_stack import ArrayStack
 from src.array_queue import ArrayQueue
 
+
 def is_palindrome(text):
     stack = ArrayStack()
     queue = ArrayQueue()
@@ -16,6 +17,7 @@ def is_palindrome(text):
 
     return True
 
+
 if __name__ == "__main__":
     test_strings = [
         "arara",
@@ -24,7 +26,7 @@ if __name__ == "__main__":
         "Socorram me subi no onibus em Marrocos",
         "Python",
         "12321",
-        "123 45"
+        "123 45",
     ]
 
     for s in test_strings:

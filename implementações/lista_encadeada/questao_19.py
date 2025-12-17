@@ -1,5 +1,6 @@
 from src.linked_deque import LinkedDeque
 
+
 def remove_duplicates(deque):
     """
     Remove elementos duplicados de uma lista duplamente encadeada (LinkedDeque).
@@ -18,6 +19,7 @@ def remove_duplicates(deque):
             seen.add(current._element)
         current = next_node
 
+
 def print_deque(deque):
     elements = []
     current = deque._header._next
@@ -25,6 +27,7 @@ def print_deque(deque):
         elements.append(str(current._element))
         current = current._next
     print("[" + " <-> ".join(elements) + "]")
+
 
 if __name__ == "__main__":
     dll = LinkedDeque()

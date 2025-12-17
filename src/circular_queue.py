@@ -24,7 +24,7 @@ class CircularQueue:
         Lança a exceção Empty se a fila estiver vazia.
         """
         if self.is_empty():
-            raise Empty('Queue is empty')
+            raise Empty("Queue is empty")
         head = self._tail._next
         return head._element
 
@@ -34,7 +34,7 @@ class CircularQueue:
         Lança a exceção Empty se a fila estiver vazia.
         """
         if self.is_empty():
-            raise Empty('Queue is empty')
+            raise Empty("Queue is empty")
         oldhead = self._tail._next
         if self._size == 1:
             self._tail = None

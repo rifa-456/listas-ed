@@ -1,9 +1,10 @@
 from src.array_stack import ArrayStack
 
+
 def is_matched(expression):
     stack = ArrayStack()
-    lefty = '({['
-    righty = ')}]'
+    lefty = "({["
+    righty = ")}]"
 
     for c in expression:
         if c in lefty:
@@ -15,6 +16,7 @@ def is_matched(expression):
                 return False
     return stack.is_empty()
 
+
 if __name__ == "__main__":
     expressions = [
         "(5+{(5}) * (4-2)",
@@ -22,7 +24,7 @@ if __name__ == "__main__":
         "(5+2",
         ")5+2(",
         "{(5+2) + [3*4]}",
-        "{(5+2) + [3*4]"
+        "{(5+2) + [3*4]",
     ]
 
     for expr in expressions:

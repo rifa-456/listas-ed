@@ -1,5 +1,6 @@
 from src.linked_queue import LinkedQueue
 
+
 def split_pos_neg(source_queue):
     """
     Separa uma lista encadeada (fila) em duas:
@@ -20,6 +21,7 @@ def split_pos_neg(source_queue):
 
     return pos_queue, neg_queue
 
+
 def print_queue(queue):
     elements = []
     current = queue._head
@@ -27,6 +29,7 @@ def print_queue(queue):
         elements.append(str(current._element))
         current = current._next
     print("[" + ", ".join(elements) + "]")
+
 
 if __name__ == "__main__":
     original = LinkedQueue()

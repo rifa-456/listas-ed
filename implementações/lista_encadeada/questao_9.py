@@ -1,7 +1,9 @@
 from src.array_stack import ArrayStack
 
+
 def is_operator(c):
-    return c in ['+', '-', '*', '/', '^']
+    return c in ["+", "-", "*", "/", "^"]
+
 
 def prefix_to_infix(expression):
     stack = ArrayStack()
@@ -18,6 +20,7 @@ def prefix_to_infix(expression):
 
     return stack.pop()
 
+
 def prefix_to_postfix(expression):
     stack = ArrayStack()
     tokens = expression.split()
@@ -33,12 +36,9 @@ def prefix_to_postfix(expression):
 
     return stack.pop()
 
+
 if __name__ == "__main__":
-    expressions = [
-        "* + A B - C D",
-        "+ - 5 2 4",
-        "/ + 3 * 2 4 - 8 6"
-    ]
+    expressions = ["* + A B - C D", "+ - 5 2 4", "/ + 3 * 2 4 - 8 6"]
 
     for expr in expressions:
         print(f"Prefixada:  {expr}")

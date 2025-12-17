@@ -29,7 +29,7 @@ class LinkedStack:
         Lança a exceção Empty se a pilha estiver vazia.
         """
         if self.is_empty():
-            raise Empty('Pilha vazia')
+            raise Empty("Pilha vazia")
         return self._head._element
 
     def pop(self):
@@ -38,7 +38,7 @@ class LinkedStack:
         Lança a exceção Empty se a pilha estiver vazia.
         """
         if self.is_empty():
-            raise Empty('Pilha vazia')
+            raise Empty("Pilha vazia")
         answer = self._head._element
         self._head = self._head._next
         self._size -= 1

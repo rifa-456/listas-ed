@@ -1,5 +1,6 @@
 from src.linked_stack import LinkedStack
 
+
 def find_penultimate_node(head):
     """
     Encontra o penúltimo nó em uma lista encadeada simples.
@@ -12,6 +13,7 @@ def find_penultimate_node(head):
         current = current._next
 
     return current
+
 
 if __name__ == "__main__":
     stack = LinkedStack()

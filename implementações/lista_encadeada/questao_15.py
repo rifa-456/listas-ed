@@ -1,10 +1,12 @@
 from src.linked_stack import LinkedStack
 
+
 def count_nodes_recursive(node):
     if node is None:
         return 0
     else:
         return 1 + count_nodes_recursive(node._next)
+
 
 if __name__ == "__main__":
     stack = LinkedStack()

@@ -1,7 +1,6 @@
 from src.array_stack import ArrayStack
 
 if __name__ == "__main__":
-
     stack = ArrayStack()
 
     stack.push(5)

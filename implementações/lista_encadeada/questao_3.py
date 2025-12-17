@@ -1,8 +1,10 @@
 from src.array_stack import ArrayStack
 
+
 def transfer(S, T):
     while not S.is_empty():
         T.push(S.pop())
+
 
 if __name__ == "__main__":
     S = ArrayStack()

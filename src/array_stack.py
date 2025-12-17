@@ -26,7 +26,7 @@ class ArrayStack:
         Lança a exceção Empty se a pilha estiver vazia.
         """
         if self.is_empty():
-            raise Empty('Pilha vazia')
+            raise Empty("Pilha vazia")
         return self._data[-1]
 
     def pop(self):
@@ -35,5 +35,5 @@ class ArrayStack:
         Lança a exceção Empty se a pilha estiver vazia.
         """
         if self.is_empty():
-            raise Empty('Pilha vazia')
+            raise Empty("Pilha vazia")
         return self._data.pop()

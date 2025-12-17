@@ -3,6 +3,7 @@ from src.exceptions import Empty
 
 class ArrayDeque:
     """Implementação de fila de duas pontas (deque) usando uma lista Python como armazenamento subjacente."""
+
     DEFAULT_CAPACITY = 10
 
     def __init__(self):
