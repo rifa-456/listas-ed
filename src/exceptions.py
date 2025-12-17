@@ -3,6 +3,8 @@ class ExecutionError(Exception):
 
     pass
 
+
 class Empty(ExecutionError):
     """Exceção lançada por Queue."""
+
     pass

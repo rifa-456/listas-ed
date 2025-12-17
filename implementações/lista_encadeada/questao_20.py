@@ -1,5 +1,6 @@
 from src.linked_deque import LinkedDeque
 
+
 def print_deque(deque, label):
     elements = []
     if not deque.is_empty():
@@ -9,6 +10,7 @@ def print_deque(deque, label):
             current = current._next
 
     print(f"{label}: [" + " <-> ".join(elements) + "]")
+
 
 if __name__ == "__main__":
     dq = LinkedDeque()

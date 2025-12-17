@@ -25,7 +25,7 @@ class LinkedQueue:
         Raise Empty exception if the queue is empty.
         """
         if self.is_empty():
-            raise Empty('Queue is empty')
+            raise Empty("Queue is empty")
         return self._head._element
 
     def dequeue(self):
@@ -34,7 +34,7 @@ class LinkedQueue:
         Raise Empty exception if the queue is empty.
         """
         if self.is_empty():
-            raise Empty('Queue is empty')
+            raise Empty("Queue is empty")
         answer = self._head._element
         self._head = self._head._next
         self._size -= 1

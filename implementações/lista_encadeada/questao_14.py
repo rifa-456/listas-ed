@@ -1,5 +1,6 @@
 from src.linked_stack import LinkedStack
 
+
 def concatenate_lists(head_L, head_M):
     if head_L is None:
         return head_M
@@ -9,6 +10,7 @@ def concatenate_lists(head_L, head_M):
     current._next = head_M
     return head_L
 
+
 def print_list(head):
     current = head
     elements = []
@@ -16,6 +18,7 @@ def print_list(head):
         elements.append(str(current._element))
         current = current._next
     print(" -> ".join(elements) + " -> None")
+
 
 if __name__ == "__main__":
     L = LinkedStack()

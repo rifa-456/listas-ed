@@ -3,6 +3,7 @@ from src.exceptions import Empty
 
 class ArrayQueue:
     """Implementação de fila FIFO usando uma lista Python como armazenamento subjacente."""
+
     DEFAULT_CAPACITY = 10
 
     def __init__(self):
@@ -25,7 +26,7 @@ class ArrayQueue:
         Lança a exceção Empty se a fila estiver vazia.
         """
         if self.is_empty():
-            raise Empty('Queue is empty')
+            raise Empty("Queue is empty")
         return self._data[self._front]
 
     def dequeue(self):
@@ -34,7 +35,7 @@ class ArrayQueue:
         Lança a exceção Empty se a fila estiver vazia.
         """
         if self.is_empty():
-            raise Empty('Queue is empty')
+            raise Empty("Queue is empty")
         answer = self._data[self._front]
         self._data[self._front] = None
         self._front = (self._front + 1) % len(self._data)

@@ -1,5 +1,6 @@
 from src.circular_queue import CircularQueue
 
+
 def count_circular_nodes(c_queue):
     """
     Conta o número de nós em uma lista circularmente encadeada
@@ -15,6 +16,7 @@ def count_circular_nodes(c_queue):
         count += 1
         current = current._next
     return count
+
 
 if __name__ == "__main__":
     cq = CircularQueue()
